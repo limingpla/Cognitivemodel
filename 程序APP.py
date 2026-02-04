@@ -13,11 +13,11 @@ feature_ranges = {
     "Age": {"type": "numerical", "min": 18, "max": 89, "default": 45},
     "AAPR": {"type": "numerical", "min": 0.0341, "max": 1.2875, "default": 0.5000},
     "LAR": {"type": "numerical", "min": 0.0132, "max": 0.6726, "default": 0.3000},
-    "GCS": {"type": "numerical", "min": 1, "max": 15, "default": 12},
-    "PNI": {"type": "numerical", "min": 16.55, "max": 442.45, "default": 200.00},
     "Hemoglobin": {"type": "numerical", "min": 28.5, "max": 195, "default": 100},
-    "PLR": {"type": "numerical", "min": 10.674, "max": 950.000, "default": 400.00},
+    "GCS": {"type": "numerical", "min": 1, "max": 15, "default": 12},
     "SOFA": {"type": "numerical", "min": 2, "max": 24, "default": 5},
+    "PLR": {"type": "numerical", "min": 10.674, "max": 950.000, "default": 400.00},
+    "PNI": {"type": "numerical", "min": 16.55, "max": 442.45, "default": 200.00},
 }
 
 # Streamlit 界面
@@ -127,4 +127,5 @@ if st.button("Predict"):
             ax.barh(feature_importance['feature'], feature_importance['importance'])
             ax.set_xlabel('Feature Importance')
             ax.set_title('Random Forest Feature Importance for Cognitive Impairment Prediction')
+
             st.pyplot(fig)
